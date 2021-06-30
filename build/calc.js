@@ -473,7 +473,7 @@ const setup_random_box_simulation = () => {
 const random_box_bonuses = [
     {
         chance: 1,
-        name: "Found Coins",
+        name: "Coins",
         toggleable: false,
     },
     {
@@ -518,7 +518,7 @@ const random_box_bonuses = [
     },
     {
         chance: 0.12,
-        name: "Increase Souls",
+        name: "Souls Bonus Multiplier",
         toggleable: true,
     },
 ];
@@ -539,7 +539,7 @@ const create_random_box_checkbox = (bonus) => {
     const label = document.createElement("label");
     label.textContent = bonus.name;
     if (bonus.name === "Horde") {
-        label.textContent = "Map has flying enemies, or you have Mega Horde";
+        label.textContent = "Mega Horde";
     }
     label.htmlFor = bonus.name;
     const container = document.createElement("div");
