@@ -660,7 +660,7 @@ const calculate_distribution = (box_set) => {
  */
 const get_box_probabilities = () => {
     const filtered_boxes = random_box_bonuses.filter((bonus) => toggled[bonus.name] === undefined || toggled[bonus.name]);
-    const idx = filtered_boxes.findIndex((box) => box.name === "Found Coins");
+    const idx = filtered_boxes.findIndex((box) => box.name === "Coins");
     if (random_box_reduce_found_coins) {
         filtered_boxes[idx].chance = 0.9;
     }
