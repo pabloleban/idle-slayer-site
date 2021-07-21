@@ -83,11 +83,16 @@
         "coins": 6,
         "base": false
     },
-	"Golden Cobra": {
+    "Golden Cobra": {
         "souls": 22,
         "coins": 30,
         "base": false
-		},
+    },
+    "Ice Wraith": {
+        "souls": 3,
+        "coins": 4,
+        "base": true
+    },
     "Jelly": {
         "souls": 1,
         "coins": 4,
