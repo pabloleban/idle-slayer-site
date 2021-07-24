@@ -521,6 +521,11 @@ const random_box_bonuses = [
         name: "Souls Bonus Multiplier",
         toggleable: true,
     },
+    {
+        chance: 0.04,
+        name: "Fury",
+        toggleable: true,
+    },
 ];
 let random_box_reduce_found_coins = false;
 //map from bonus name to toggled state, if toggleable
