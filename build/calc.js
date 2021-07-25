@@ -20,23 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         header.addEventListener("click", change_table_sort);
     }
 });
-const load_json = (url) => {
-    return new Promise((resolve) => {
-        const req = new XMLHttpRequest();
-        req.onreadystatechange = () => {
-            if (req.readyState === 4 && req.status === 200) {
-                resolve(JSON.parse(req.responseText));
-            }
-        };
-        req.overrideMimeType("application/json");
-        req.open("GET", `./build/data/${url}`, true);
-        req.send();
-    });
-};
 const base_enemies = [];
-let enemies = {};
-let maps = [];
-let giants = [];
 const map_active_value_result_cells = {};
 const map_idle_value_result_cells = {};
 let pattern_level_input = null;
@@ -52,9 +36,6 @@ const giant_bought = {};
 const MAX_PATTERN_LEVEL = 3;
 const MIN_PATTERN_LEVEL = 1;
 const setup_map_value_area = async () => {
-    enemies = await load_json("enemies.json");
-    maps = await load_json("maps.json");
-    giants = await load_json("giants.json");
     const bonus_index = maps.findIndex((m) => m.name === "Bonus Stage");
     if (bonus_index !== -1) {
         maps.splice(bonus_index, 1);

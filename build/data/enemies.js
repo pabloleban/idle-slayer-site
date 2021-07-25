@@ -1,4 +1,4 @@
-{
+let enemies = {
     "Alpha Worm": {
         "souls": 5,
         "coins": 4,
@@ -8,7 +8,7 @@
     "Bat": {
         "souls": 1,
         "coins": 2,
-		"evolution": "Ice Bat",
+		"evolution": "Fire Bat",
         "base": true
     },
     "Bee": {

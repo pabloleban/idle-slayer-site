@@ -1,4 +1,4 @@
-[
+let maps = [
     {
         "name": "Bonus Stage 2",
         "patterns": []

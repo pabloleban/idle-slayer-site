@@ -1,4 +1,4 @@
-[
+let giants = [
     {
         "name": "Hills' Golem",
         "maps": ["Hills"],
