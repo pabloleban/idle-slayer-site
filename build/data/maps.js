@@ -163,6 +163,14 @@ let maps = [
             },
             {
                 "enemies": [
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith"
+                ],
+                "level": 2
+            },
+            {
+                "enemies": [
                     "Young Yeti",
                     "Young Yeti",
                     "Young Yeti"
@@ -177,7 +185,18 @@ let maps = [
                     "Young Yeti"
                 ],
                 "level": 3
-            }
+            },
+            {
+                "enemies": [
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith"
+                ],
+                "level": 3
+            },
         ]
     },
     {
