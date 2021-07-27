@@ -488,6 +488,11 @@ const random_box_bonuses = [
         toggleable: true,
     },
     {
+        chance: 0.04,
+        name: "Fury",
+        toggleable: true,
+    },
+    {
         chance: 0.2,
         name: "CpS Multiplier",
         toggleable: false,
@@ -500,11 +505,6 @@ const random_box_bonuses = [
     {
         chance: 0.12,
         name: "Souls Bonus Multiplier",
-        toggleable: true,
-    },
-    {
-        chance: 0.04,
-        name: "Fury",
         toggleable: true,
     },
 ];
