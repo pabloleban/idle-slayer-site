@@ -11,10 +11,10 @@ let enemies = {
 		"evolution": "Fire Bat",
         "base": true
     },
-    "Bee": {
+    "Wasp": {
         "souls": 2,
         "coins": 3,
-        "evolution": "Bumblebee",
+        "evolution": "Hornet",
         "base": true
     },
     "Beta Worm": {
@@ -23,7 +23,7 @@ let enemies = {
         "evolution": "Gamma Worm",
         "base": false
     },
-    "Black Bumblebee": {
+    "Black Hornet": {
         "souls": 6,
         "coins": 7,
         "base": false
@@ -38,10 +38,10 @@ let enemies = {
         "coins": 2,
         "base": false
     },
-    "Bumblebee": {
+    "Hornet": {
         "souls": 4,
         "coins": 4,
-        "evolution": "Black Bumblebee",
+        "evolution": "Black Hornet",
         "base": false
     },
     "Carniplant": {
