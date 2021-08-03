@@ -1,105 +1,105 @@
 let maps = [
     {
-        "name": "Bonus Stage 2",
-        "patterns": []
+        name: "Bonus Stage 2",
+        patterns: []
     },
     {
-        "name": "Bonus Stage",
-        "patterns": []
+        name: "Bonus Stage",
+        patterns: []
     },
     {
-        "name": "Special Bonus Stage",
-        "patterns": []
+        name: "Special Bonus Stage",
+        patterns: []
     },
 		{
-				"name": "Hot Desert",
-				"patterns": [
+				name: "Hot Desert",
+				patterns: [
 					{ 
-						"enemies": [
+						enemies: [
 								"Cobra",
 								"Cobra",
 								"Cobra"
 						],
-						"level": 1
+						level: 1
 					},
 					{ 
-							"enemies": [
+							enemies: [
 									"Cobra",
 									"Cobra",
 									"Scorpion"
 							],
-							"level": 2
+							level: 2
 					},
 					{ 
-							"enemies":[
+							enemies:[
 									"Cobra",
 									"Cobra",
 									"Scorpion",
 									"Scorpion",
 									"Scorpion"
 							],
-							"level": 3
+							level: 3
 					},
 					{ 
-							"enemies": [
+							enemies: [
 									"Scorpion"
 							],
-							"level": 1
+							level: 1
 					}
 				]
 		},
     {
-        "name": "Factory",
-        "patterns": [
+        name: "Factory",
+        patterns: [
             {
-                "enemies": [
+                enemies: [
                     "Soul Barrel"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
-                    "Soul Barrel",
-                    "Soul Barrel",
-                    "Soul Barrel"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Toxic Gas",
-                    "Toxic Gas",
-                    "Toxic Gas"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Toxic Gas",
-                    "Toxic Gas",
-                    "Toxic Gas"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
+                enemies: [
                     "Soul Barrel",
                     "Soul Barrel",
                     "Soul Barrel"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
+                    "Toxic Gas",
+                    "Toxic Gas",
+                    "Toxic Gas"
+                ],
+                level: 2
+            },
+            {
+                enemies: [
+                    "Toxic Gas",
+                    "Toxic Gas",
+                    "Toxic Gas"
+                ],
+                level: 2
+            },
+            {
+                enemies: [
+                    "Soul Barrel",
+                    "Soul Barrel",
+                    "Soul Barrel"
+                ],
+                level: 2
+            },
+            {
+                enemies: [
                     "Toxic Gas",
                     "Toxic Gas",
                     "Toxic Gas",
                     "Toxic Gas"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Jelly",
                     "Jelly",
                     "Jelly",
@@ -107,20 +107,20 @@ let maps = [
                     "Jelly",
                     "Jelly"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Soul Barrel",
                     "Soul Barrel",
                     "Soul Barrel",
                     "Soul Barrel",
                     "Soul Barrel"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Jelly",
                     "Jelly",
                     "Jelly",
@@ -132,114 +132,114 @@ let maps = [
                     "Jelly",
                     "Jelly"
                 ],
-                "level": 3
+                level: 3
             }
         ]
     },
     {
-        "name": "Frozen Fields",
-        "patterns": [
+        name: "Frozen Fields",
+        patterns: [
             {
-                "enemies": [
+                enemies: [
                     "Young Yeti"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Young Yeti",
                     "Young Yeti",
                     "Young Yeti"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Jelly",
                     "Young Yeti",
                     "Young Yeti"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Young Yeti",
                     "Young Yeti",
                     "Young Yeti"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Young Yeti",
                     "Young Yeti",
                     "Young Yeti",
                     "Young Yeti"
                 ],
-                "level": 3
+                level: 3
             }
         ]
     },
     {
-        "name": "Haunted Castle",
-        "patterns": [
+        name: "Haunted Castle",
+        patterns: [
             {
-                "enemies": [
+                enemies: [
                     "Demon"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Worm"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Worm",
                     "Worm"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Bat",
                     "Bat",
                     "Bat",
                     "Bat"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Worm",
                     "Worm",
                     "Worm",
                     "Worm",
                     "Worm"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Bat",
                     "Bat",
                     "Bat",
                     "Bat",
                     "Bat"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Demon",
                     "Demon"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Worm",
                     "Worm",
                     "Worm",
@@ -250,10 +250,10 @@ let maps = [
                     "Worm",
                     "Worm"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Bat",
                     "Bat",
                     "Bat",
@@ -265,167 +265,167 @@ let maps = [
                     "Bat",
                     "Bat"
                 ],
-                "level": 3
+                level: 3
             }
         ]
     },
     {
-        "name": "Hills",
-        "patterns": [
+        name: "Hills",
+        patterns: [
             {
-                "enemies": [
+                enemies: [
                     "Bee"
                 ],
-                "level": 1
+                level: 1
             },
             {
-                "enemies": [
+                enemies: [
                     "Bee",
                     "Bee"
                 ],
-                "level": 1
+                level: 1
             },
             {
-                "enemies": [
+                enemies: [
                     "Worm"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
-                    "Worm",
-                    "Worm"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Bee",
-                    "Bee",
-                    "Bee"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Bee",
-                    "Bee",
-                    "Bee"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Bee",
-                    "Bee",
-                    "Bee"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Worm",
-                    "Worm",
-                    "Worm",
+                enemies: [
                     "Worm",
                     "Worm"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Bee",
                     "Bee",
+                    "Bee"
+                ],
+                level: 2
+            },
+            {
+                enemies: [
+                    "Bee",
+                    "Bee",
+                    "Bee"
+                ],
+                level: 2
+            },
+            {
+                enemies: [
+                    "Bee",
+                    "Bee",
+                    "Bee"
+                ],
+                level: 2
+            },
+            {
+                enemies: [
                     "Bee",
                     "Bee",
                     "Bee",
                     "Bee"
                 ],
-                "level": 3
+                level: 2
             },
             {
-                "enemies": [
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee"
-                ],
-                "level": 3
-            },
-            {
-                "enemies": [
-                    "Worm",
-                    "Worm",
-                    "Worm",
-                    "Worm",
+                enemies: [
                     "Worm",
                     "Worm",
                     "Worm",
                     "Worm",
                     "Worm"
                 ],
-                "level": 3
+                level: 2
+            },
+            {
+                enemies: [
+                    "Bee",
+                    "Bee",
+                    "Bee",
+                    "Bee",
+                    "Bee",
+                    "Bee"
+                ],
+                level: 3
+            },
+            {
+                enemies: [
+                    "Bee",
+                    "Bee",
+                    "Bee",
+                    "Bee",
+                    "Bee",
+                    "Bee",
+                    "Bee",
+                    "Bee"
+                ],
+                level: 3
+            },
+            {
+                enemies: [
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm"
+                ],
+                level: 3
             }
         ]
     },
     {
-        "name": "Jungle",
-        "patterns": [
+        name: "Jungle",
+        patterns: [
             {
-                "enemies": [
+                enemies: [
                     "Carniplant",
                     "Carniplant"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Bee",
                     "Bee",
                     "Bee"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Bee",
                     "Bee",
                     "Bee"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Mushroom",
                     "Mushroom",
                     "Mushroom",
                     "Mushroom"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Carniplant",
                     "Carniplant",
                     "Carniplant"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Bee",
                     "Bee",
                     "Bee",
@@ -433,10 +433,10 @@ let maps = [
                     "Bee",
                     "Bee"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Mushroom",
                     "Mushroom",
                     "Mushroom",
@@ -444,10 +444,10 @@ let maps = [
                     "Mushroom",
                     "Mushroom"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Bee",
                     "Bee",
                     "Bee",
@@ -457,91 +457,91 @@ let maps = [
                     "Bee",
                     "Bee"
                 ],
-                "level": 3
+                level: 3
             }
         ]
     },
     {
-        "name": "Modern City",
-        "patterns": [
+        name: "Modern City",
+        patterns: [
             {
-                "enemies": [
+                enemies: [
                     "Jelly",
                     "Jelly"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Worm",
                     "Worm"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Bat",
                     "Bat",
                     "Bat",
                     "Bat"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
-                    "Worm",
-                    "Worm",
-                    "Worm",
-                    "Worm",
-                    "Worm"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Bat",
-                    "Bat",
-                    "Bat",
-                    "Bat",
-                    "Bat"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Jelly",
-                    "Jelly",
-                    "Jelly",
-                    "Jelly",
-                    "Jelly",
-                    "Jelly"
-                ],
-                "level": 2
-            },
-            {
-                "enemies": [
-                    "Jelly",
-                    "Jelly",
-                    "Jelly"
-                ],
-                "level": 3
-            },
-            {
-                "enemies": [
-                    "Worm",
-                    "Worm",
-                    "Worm",
-                    "Worm",
+                enemies: [
                     "Worm",
                     "Worm",
                     "Worm",
                     "Worm",
                     "Worm"
                 ],
-                "level": 3
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
+                    "Bat",
+                    "Bat",
+                    "Bat",
+                    "Bat",
+                    "Bat"
+                ],
+                level: 2
+            },
+            {
+                enemies: [
+                    "Jelly",
+                    "Jelly",
+                    "Jelly",
+                    "Jelly",
+                    "Jelly",
+                    "Jelly"
+                ],
+                level: 2
+            },
+            {
+                enemies: [
+                    "Jelly",
+                    "Jelly",
+                    "Jelly"
+                ],
+                level: 3
+            },
+            {
+                enemies: [
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm",
+                    "Worm"
+                ],
+                level: 3
+            },
+            {
+                enemies: [
                     "Jelly",
                     "Jelly",
                     "Jelly",
@@ -553,10 +553,10 @@ let maps = [
                     "Jelly",
                     "Jelly"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Bat",
                     "Bat",
                     "Bat",
@@ -568,72 +568,72 @@ let maps = [
                     "Bat",
                     "Bat"
                 ],
-                "level": 3
+                level: 3
             }
         ]
     },
     {
-        "name": "Mystic Valley",
-        "patterns": [
+        name: "Mystic Valley",
+        patterns: [
             {
-                "enemies": [
+                enemies: [
                     "Mushroom"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Wildfire"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Cursed Tree",
                     "Cursed Tree"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Cursed Tree",
                     "Cursed Tree"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Wildfire",
                     "Wildfire"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Cursed Tree",
                     "Cursed Tree"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Wildfire",
                     "Wildfire",
                     "Wildfire"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Mushroom",
                     "Mushroom",
                     "Mushroom",
                     "Mushroom"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Mushroom",
                     "Mushroom",
                     "Mushroom",
@@ -641,19 +641,19 @@ let maps = [
                     "Cursed Tree",
                     "Cursed Tree"
                 ],
-                "level": 2
+                level: 2
             },
             {
-                "enemies": [
+                enemies: [
                     "Cursed Tree",
                     "Cursed Tree",
                     "Cursed Tree",
                     "Cursed Tree"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Wildfire",
                     "Wildfire",
                     "Wildfire",
@@ -661,10 +661,10 @@ let maps = [
                     "Wildfire",
                     "Wildfire"
                 ],
-                "level": 3
+                level: 3
             },
             {
-                "enemies": [
+                enemies: [
                     "Wildfire",
                     "Wildfire",
                     "Wildfire",
@@ -674,7 +674,7 @@ let maps = [
                     "Wildfire",
                     "Wildfire"
                 ],
-                "level": 3
+                level: 3
             }
         ]
     }
