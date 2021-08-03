@@ -163,6 +163,14 @@ let maps = [
             },
             {
                 enemies: [
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith"
+                ],
+                level: 2
+            },
+            {
+                enemies: [
                     "Young Yeti",
                     "Young Yeti",
                     "Young Yeti"
@@ -177,7 +185,18 @@ let maps = [
                     "Young Yeti"
                 ],
                 level: 3
-            }
+            },
+            {
+                enemies: [
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith",
+                    "Ice Wraith"
+                ],
+                level: 3
+            },
         ]
     },
     {
@@ -274,14 +293,14 @@ let maps = [
         patterns: [
             {
                 enemies: [
-                    "Bee"
+                    "Wasp"
                 ],
                 level: 1
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 1
             },
@@ -300,34 +319,34 @@ let maps = [
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 2
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 2
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 2
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 2
             },
@@ -343,25 +362,25 @@ let maps = [
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 3
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 3
             },
@@ -393,17 +412,17 @@ let maps = [
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 2
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 2
             },
@@ -426,12 +445,12 @@ let maps = [
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 3
             },
@@ -448,14 +467,14 @@ let maps = [
             },
             {
                 enemies: [
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee",
-                    "Bee"
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp",
+                    "Wasp"
                 ],
                 level: 3
             }

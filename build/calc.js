@@ -483,6 +483,11 @@ const random_box_bonuses = [
         toggleable: true,
     },
     {
+        chance: 0.04,
+        name: "Fury",
+        toggleable: true,
+    },
+    {
         chance: 0.12,
         name: "Gemstone Rush",
         toggleable: true,

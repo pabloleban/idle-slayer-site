@@ -1,6 +1,6 @@
 let giants = [
     {
-        name: "Hills' Golem",
+        name: "Hills' Giant",
         maps: ["Hills"],
         coins: 40,
         souls: 60
