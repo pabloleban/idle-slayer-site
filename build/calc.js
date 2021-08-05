@@ -19,7 +19,28 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const header of sortable_headers) {
         header.addEventListener("click", change_table_sort);
     }
-});
+    // handle clicks on check/uncheck all
+    document.getElementById("checkAll").addEventListener("click", () => {
+        setAllCheckboxes(true);
+        document.getElementById("maxPatternLevel").value = "3";
+        calculate_map_values();
+    });
+    document.getElementById("unCheckAll").addEventListener("click", () => {
+        setAllCheckboxes(false);
+        document.getElementById("maxPatternLevel").value = "1";
+        calculate_map_values();
+    });
+  });
+
+// give true/false as value
+const setAllCheckboxes = (value) => {
+    Array.from(document.getElementsByTagName("input")).forEach((input) => {
+        if (input.type === "checkbox" && input.checked !== value) {
+            input.click();
+        }
+    });
+};
+
 const base_enemies = [];
 const map_active_value_result_cells = {};
 const map_idle_value_result_cells = {};

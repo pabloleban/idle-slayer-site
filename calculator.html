@@ -74,6 +74,10 @@
 	</html>
 	<br>
 	<h1 id="mapValues">Dimension Values</h1>
+	<div>
+		<button id="checkAll">Check all</button>
+		<button id="unCheckAll">Uncheck all</button>
+	</div>
 	<div id="mapValueOptionsArea">
 		<span>Upgrades bought affecting spawn rates:</span>
 		<ul id="mapValueSpawnRateList">
@@ -109,7 +113,7 @@
 		<br />
 		<label for="maxPatternLevel">Enemy pattern level (Increased by one for each upgrade: Start Adventure, Enemy
 			Realm, More Than Ever).</label>
-		<input max="3" step="1" min="1" type="number" name="maxPatternLevel" />
+		<input max="3" step="1" min="1" type="number" name="maxPatternLevel" id="maxPatternLevel" />
 		<label for="mapValueEvolutionsList">Check unlocked evolutions:</label>
 		<ul id="mapValueEvolutionsList" name="mapValueEvolutionsList"></ul>
 		<label for="mapValueGiantsList">Check unlocked Giants:</label>
