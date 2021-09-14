@@ -521,7 +521,7 @@ const random_box_bonuses = [
     {
         chance: 0.25,
         name: "Horde",
-        toggleable: true,
+        toggleable: false,
     },
     {
         chance: 0.12,
@@ -546,7 +546,7 @@ const create_random_box_checkbox = (bonus) => {
     const label = document.createElement("label");
     label.textContent = bonus.name;
     if (bonus.name === "Horde") {
-        label.textContent = "Mega Horde";
+        label.textContent = "Horde";
     }
     label.htmlFor = bonus.name;
     const container = document.createElement("div");
