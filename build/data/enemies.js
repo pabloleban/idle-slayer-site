@@ -67,6 +67,11 @@ let enemies = {
         evolution: "Cursed Oak Tree",
         base: true
     },
+    "Delta Worm": {
+        souls: 12,
+        coins: 10,
+        base: false
+    },
     "Demon": {
         souls: 7,
         coins: 15,
@@ -81,6 +86,7 @@ let enemies = {
     "Gamma Worm": {
         souls: 9,
         coins: 6,
+        evolution: "Delta Worm",
         base: false
     },
 	"Golden Cobra": {
