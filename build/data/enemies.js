@@ -78,6 +78,11 @@ let enemies = {
         evolution: "Black Demon",
         base: true
     },
+    "Electric Yeti": {
+        souls: 16,
+        coins: 5,
+        base: false
+    },
     "Fire Bat": {
         souls: 12,
         coins: 8,
@@ -173,6 +178,7 @@ let enemies = {
     "Young Yeti": {
         souls: 4,
         coins: 1,
+        evolution: "Electric Yeti",
         base: true
     }
 }
