@@ -1,5 +1,86 @@
 google.com, pub-6663260295229937, DIRECT, f08c47fec0942fa0
 
+kidoz.net, 19692013, RESELLER
+
+meitu.com, 282, RESELLER
+
+unity.com, 1893529, DIRECT, 96cabb5fbdde37a7
+
+xandr.com, 7353, RESELLER
+
+algorix.co, 54616, RESELLER
+
+appnexus.com, 7353, RESELLER
+
+appnexus.com, 2764, RESELLER
+
+appnexus.com, 10617, RESELLER
+
+appnexus.com, 9393, RESELLER
+
+loopme.com, 9621, RESELLER, 6c8d5f95897a5a3b
+
+openx.com, 540871654, RESELLER, 6a698e2ec38604c6
+
+openx.com, 541031350, RESELLER, 6a698e2ec38604c6
+
+telaria.com, rwd19-1893529, RESELLER, 1a4e959a1b50034a
+
+pubmatic.com, 157384, RESELLER, 5d62403b186f2ace
+
+pubmatic.com, 159906, RESELLER, 5d62403b186f2ace
+
+pubmatic.com, 160846, RESELLER, 5d62403b186f2ace
+
+pubmatic.com, 156494, RESELLER, 5d62403b186f2ace
+
+pubnative.net, 1006955, RESELLER, d641df8625486a7b
+
+pubnative.net, 1007040, RESELLER, d641df8625486a7b
+
+pubnative.net, 1006955, RESELLER, d641df8625486a7b
+
+indexexchange.com, 194730, RESELLER, 50b1c356f2c5c8fc
+
+indexexchange.com, 186684, RESELLER, 50b1c356f2c5c8fc
+
+lemmatechnologies.com, 362, RESELLER, 7829010c5bebd1fb
+
+pokkt.com, 6246, RESELLER, c45702d9311e25fd
+
+pokkt.com, 7606, RESELLER, c45702d9311e25fd
+
+reforge.in, 107, RESELLER
+
+reforge.in, 353, RESELLER
+
+tremorhub.com, rwd19-1893529, RESELLER, 1a4e959a1b50034a
+
+contextweb.com, 562499, RESELLER, 89ff185a4c4e857c
+
+rubiconproject.com, 20014, RESELLER, 0bfd66d529a55807
+
+rubiconproject.com, 21526, RESELLER, 0bfd66d529a55807
+
+rubiconproject.com, 14334, RESELLER, 0bfd66d529a55807
+
+admixer.net, 4ca083cd-412f-49fe-b832-5b66ee490d9a, RESELLER
+
+google.com, pub-8728712656723745, RESELLER
+
+google.com, pub-3720236679877161, RESELLER
+
+inmobi.com, 61d733c3779d43e590c51c8bc078e10c, RESELLER, 83e75a7ae333ca9d
+
+velismedia.com, 725, RESELLER
+
+velismedia.com, 1137, RESELLER
+
+adcolony.com, 0a0f72cd66122f31, RESELLER, 1ad675c9de6b5176
+
+appads.in, 107606, RESELLER
+
+exchange.admazing.co, AM3, RESELLER
 tapjoy.com, d8f3edf3dea74a598e193862a511073b, DIRECT, 29e595b1aeb5904d
 rubiconproject.com, 12286, RESELLER, 0bfd66d529a55807
 webeyemob.com, 70096, RESELLER
