@@ -121,6 +121,11 @@ let enemies = {
         coins: 10,
         base: false
     },
+    "Poisonous Gas": {
+        souls: 28,
+        coins: 10,
+        base: false
+    },
     "Red Jelly": {
         souls: 2,
         coins: 7,
@@ -156,6 +161,7 @@ let enemies = {
     "Toxic Gas": {
         souls: 12,
         coins: 3,
+        evolution: "Poisonous Gas",
         base: true
     },
     "Venus Carniplant": {
