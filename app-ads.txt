@@ -466,3 +466,11 @@ algorix.co, 60093, Reseller, 5b394c12fea27a1d
 inmobi.com, 3a4f7da341dd490cbb7dde02b126275e, RESELLER, 83e75a7ae333ca9d
 pubmatic.com, 160145, RESELLER, 5d62403b186f2ace
 rhythmone.com, 3948367200, RESELLER, a670c89d4a324e47
+pubmatic.com, 161372, RESELLER, 5d62403b186f2ace
+pubmatic.com, 160113, RESELLER, 5d62403b186f2ace
+mintegral.com, 10038, RESELLER
+yandex.com, 40427798, RESELLER
+inmobi.com, 062029933580429f9920bad476d8d70a, RESELLER, 83e75a7ae333ca9d
+loopme.com, 11414, RESELLER, 6c8d5f95897a5a3b
+criteo.com, B-057955, RESELLER, 9fac4a4a87c2a44f
+liftoff.io, 7f6945815e6, RESELLER
