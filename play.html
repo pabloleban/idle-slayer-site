@@ -1,0 +1,45 @@
+<html>
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ2E4V50Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HJ2E4V50Z5');
+</script>
+
+</head>
+<body>
+<script>
+
+function iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
+
+const iosLink = "https://apps.apple.com/us/app/idle-slayer/id1526599527"
+const androidLink = "https://play.google.com/store/apps/details?id=com.pabloleban.IdleSlayer"
+const steamLink = "https://store.steampowered.com/app/1353300/Idle_Slayer/"
+
+if(iOS()){
+	location.href = iosLink;
+} else if(/android/i.test(navigator.userAgent)) {
+	location.href = androidLink;
+} else {
+	location.href = steamLink;
+}
+
+</script>
+</body>
+</html>
