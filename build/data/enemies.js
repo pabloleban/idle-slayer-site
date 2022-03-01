@@ -45,7 +45,7 @@ let enemies = {
         base: false
     },
     "Carniplant": {
-        souls: 2,
+        souls: 4,
         coins: 5,
         evolution: "Venus Carniplant",
         base: true
@@ -66,6 +66,16 @@ let enemies = {
         coins: 2,
         evolution: "Cursed Oak Tree",
         base: true
+    },
+    "Dark Carniplant": {
+        souls: 22,
+        coins: 20,
+        base: false
+    },
+    "Dark Ice Wraith": {
+        souls: 25,
+        coins: 20,
+        base: false
     },
     "Delta Worm": {
         souls: 12,
@@ -98,10 +108,16 @@ let enemies = {
         souls: 22,
         coins: 30,
         base: false
-		},
+	},
+    "Golden Soul Barrel": {
+        souls: 20,
+        coins: 17,
+        base: false
+    },
     "Ice Wraith": {
         souls: 3,
         coins: 4,
+        evolution: "Dark Ice Wraith",
         base: true
     },
     "Jelly": {
@@ -139,6 +155,7 @@ let enemies = {
     "Soul Barrel": {
         souls: 21,
         coins: 0,
+        evolution: "Golden Soul Barrel",
         base: true
     },
     "Soul Goblin Chief": {
@@ -165,8 +182,9 @@ let enemies = {
         base: true
     },
     "Venus Carniplant": {
-        souls: 4,
+        souls: 6,
         coins: 12,
+        evolution: "Dark Carniplant",
         base: false
     },
     "Wildfire": {
