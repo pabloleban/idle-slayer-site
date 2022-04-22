@@ -152,7 +152,6 @@ verve.com, 14561, RESELLER, 0c8f5958fc2d6270
 video.unrulymedia.com, 3169196794, RESELLER
 xad.com, 241, RESELLER, 81cbf0a75a5e0e9a
 yieldlab.net, 2172218, RESELLER
-facebook.com, 955473571155965, RESELLER, c3e20eee3f780d68
 unity.com, 18348, DIRECT, 96cabb5fbdde37a7
 webeyemob.com, 70097, RESELLER
 appads.in, 106246, RESELLER
@@ -474,3 +473,4 @@ inmobi.com, 062029933580429f9920bad476d8d70a, RESELLER, 83e75a7ae333ca9d
 loopme.com, 11414, RESELLER, 6c8d5f95897a5a3b
 criteo.com, B-057955, RESELLER, 9fac4a4a87c2a44f
 liftoff.io, 7f6945815e6, RESELLER
+facebook.com, 498948445100202, DIRECT, c3e20eee3f780d68
