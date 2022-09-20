@@ -26,11 +26,22 @@ let enemies = {
     "Black Hornet": {
         souls: 6,
         coins: 7,
+        evolution: "Dark Soul Hornet",
         base: false
     },
     "Black Demon": {
         souls: 16,
         coins: 12,
+        base: false
+    },
+    "Blue Jelly": {
+        souls: 8,
+        coins: 15,
+        base: false
+    },
+    "Blue Milk Mushroom": {
+        souls: 16,
+        coins: 46,
         base: false
     },
     "Blue Wildfire": {
@@ -68,13 +79,18 @@ let enemies = {
         base: true
     },
     "Dark Carniplant": {
-        souls: 22,
+        souls: 27,
         coins: 20,
         base: false
     },
     "Dark Ice Wraith": {
-        souls: 25,
+        souls: 30,
         coins: 20,
+        base: false
+    },
+    "Dark Soul Hornet": {
+        souls: 35,
+        coins: 35,
         base: false
     },
     "Delta Worm": {
@@ -98,6 +114,11 @@ let enemies = {
         coins: 8,
         base: false
     },
+    "Funkloud": {
+        souls: 38,
+        coins: 25,
+        base: true
+    },
     "Gamma Worm": {
         souls: 9,
         coins: 6,
@@ -110,8 +131,8 @@ let enemies = {
         base: false
 	},
     "Golden Soul Barrel": {
-        souls: 20,
-        coins: 17,
+        souls: 25,
+        coins: 35,
         base: false
     },
     "Ice Wraith": {
@@ -135,6 +156,7 @@ let enemies = {
     "Poison Mushroom": {
         souls: 2,
         coins: 10,
+        evolution: "Blue Milk Mushroom",
         base: false
     },
     "Poisonous Gas": {
@@ -145,6 +167,7 @@ let enemies = {
     "Red Jelly": {
         souls: 2,
         coins: 7,
+        evolution: "Blue Jelly",
         base: false
     },
     "Scorpion": {
@@ -174,6 +197,11 @@ let enemies = {
         coins: 8,
         evolution: "Soul Goblin Chief",
         base: false
+    },
+    "Star Note": {
+        souls: 56,
+        coins: 15,
+        base: true
     },
     "Toxic Gas": {
         souls: 12,
