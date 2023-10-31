@@ -32,6 +32,7 @@ let enemies = {
     "Black Demon": {
         souls: 16,
         coins: 12,
+        evolution: "Corrupted Demon",
         base: false
     },
     "Blue Jelly": {
@@ -67,16 +68,27 @@ let enemies = {
         evolution: "Golden Cobra",
         base: true
     },
+    "Corrupted Demon": {
+        souls: 85,
+        coins: 50,
+        base: false
+    },
     "Cursed Oak Tree": {
         souls: 11,
         coins: 4,
-        base: true
+        evolution: "Cursed Willow Tree",
+        base: false
     },
     "Cursed Tree": {
         souls: 6,
         coins: 2,
         evolution: "Cursed Oak Tree",
         base: true
+    },
+    "Cursed Willow Tree": {
+        souls: 80,
+        coins: 20,
+        base: false
     },
     "Dark Carniplant": {
         souls: 27,
@@ -88,7 +100,7 @@ let enemies = {
         coins: 20,
         base: false
     },
-    "Dark Soul Hornet": {
+    "Dark Hornet": {
         souls: 35,
         coins: 35,
         base: false
@@ -147,6 +159,11 @@ let enemies = {
         evolution: "Red Jelly",
         base: true
     },
+    "Metal Scorpion": {
+        souls: 50,
+        coins: 34,
+        base: false
+    },
     "Mushroom": {
         souls: 1,
         coins: 6,
@@ -173,6 +190,7 @@ let enemies = {
     "Scorpion": {
         souls: 12,
         coins: 5,
+        evolution: "Metal Scorpion",
         base: true
     },
     "Soul Barrel": {
