@@ -1,0 +1,20 @@
+# **v5.3.6 is now live!**
+:steam: **Live.**
+:googleplay: **Live.**
+:ios: **Pending...**
+
+### __**Improvements**__
+:check: Bug fixes.
+
+# **v5.3.5 is now live!**
+:steam: **Live.**
+:googleplay: **Live.**
+:ios: **Live.**
+
+### __**Improvements**__
+:check: Audio fixes.
+:check: Climbing Soul Boots will trigger a Portal instead of automatically teleporting you.
+:check: Minor bug fixes.
+
+### __**Balance**__
+:check: Giant Dragon Egg now costs 2 Simurgh Feathers instead of 3.
