@@ -4252,3 +4252,12 @@ algorix.co, 60085, RESELLER, 5b394c12fea27a1d
 algorix.co, 60086, RESELLER, 5b394c12fea27a1d
 algorix.co, 60087, RESELLER, 5b394c12fea27a1d
 algorix.co, 60093, RESELLER, 5b394c12fea27a1d
+openx.com, 545705254, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 158271, RESELLER, 5d62403b186f2ace
+vidoomy.com, 9148331, RESELLER
+pubmatic.com, 159668, RESELLER, 5d62403b186f2ace
+onetag.com, 5d1628750185ace, RESELLER
+rubiconproject.com, 15268, RESELLER, 0bfd66d529a55807
+appnexus.com, 6849, RESELLER
+pubmatic.com, 161058, RESELLER, 5d62403b186f2ace
+indexexchange.com, 182257, RESELLER
