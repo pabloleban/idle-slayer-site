@@ -117,6 +117,9 @@
               <button type="submit" class="btn btn-primary">Sign In</button>
             </div>
           </form>
+          <div class="text-center mt-3">
+            <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+          </div>
           <div id="signInMessage" class="mt-3"></div>
         </div>
       `;
@@ -131,6 +134,47 @@
           .catch((error) => {
             document.getElementById('signInMessage').innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
           });
+      });
+      document.getElementById('forgotPasswordLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        renderResetPasswordForm();
+      });
+    }
+
+    // Función para renderizar el formulario de reseteo de contraseña
+    function renderResetPasswordForm() {
+      cardBody.innerHTML = `
+        <div class="mb-3">
+          <h4 class="text-center mb-4">Reset Password</h4>
+          <form id="resetPasswordForm">
+            <div class="mb-3">
+              <label for="resetEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="resetEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Send Reset Email</button>
+            </div>
+          </form>
+          <div id="resetPasswordMessage" class="mt-3"></div>
+          <div class="mt-3 text-center">
+            <a href="#" id="backToSignIn">Back to Sign In</a>
+          </div>
+        </div>
+      `;
+      document.getElementById('resetPasswordForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('resetEmail').value;
+        firebase.auth().sendPasswordResetEmail(email)
+          .then(() => {
+            document.getElementById('resetPasswordMessage').innerHTML = `<div class="alert alert-success">Password reset email sent successfully.</div>`;
+          })
+          .catch((error) => {
+            document.getElementById('resetPasswordMessage').innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+          });
+      });
+      document.getElementById('backToSignIn').addEventListener('click', function(e) {
+        e.preventDefault();
+        renderSignInForm();
       });
     }
 
