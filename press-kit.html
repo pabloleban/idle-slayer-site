@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Idle Slayer Press Kit</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* Hero with fire particles */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #000;
+      color: white;
+      padding: 6rem 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+    }
+    .hero canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .badge-img {
+      height: 60px;
+      margin: 0 0.5rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .feature-icon {
+      margin-right: 0.5rem;
+      color: orange;
+    }
+    section { padding: 4rem 0; }
+    #gallery img {
+      max-height: 300px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    #gallery .col-sm-6, #gallery .col-md-4, #gallery .col-lg-3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    /* Modal styling with margins */
+    .modal-dialog { max-width: 90%; margin: 1.5rem auto; }
+    .modal-content { display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.8); border: none; }
+    #modalImage { max-height: 90vh; max-width: 100%; width: auto; margin: auto; display: block; }
+    @media (max-width: 991px) {
+      .stat-number {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section with Fire Particle Canvas -->
+  <header class="hero text-center">
+    <canvas id="fireCanvas"></canvas>
+    <div class="container">
+      <img src="img/logo.png" alt="Idle Slayer Logo" class="img-fluid mb-4">
+      <p class="lead">By Pablo Leban</p>
+      <p class="lead">An incremental RPG adventure in pixel art retro style.</p>
+      <div class="d-flex justify-content-center align-items-center mt-4 flex-wrap">
+        <a href="https://play.google.com/store/apps/details?id=com.pabloleban.IdleSlayer" target="_blank">
+          <img src="img/home/googlebadge.png" alt="Get it on Google Play" class="badge-img">
+        </a>
+        <a href="https://apps.apple.com/us/app/idle-slayer/id1526599527" target="_blank">
+          <img src="img/home/applebadge.png" alt="Download on the App Store" class="badge-img">
+        </a>
+        <a href="https://store.steampowered.com/app/1353300/Idle_Slayer/" target="_blank">
+          <img src="img/home/steam-logo.png" alt="Available on Steam" class="badge-img">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="container">
+      <div class="col-12 col-sm-8 px-4 mx-auto">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/O4NWLfjgZ78" title="Idle Slayer Trailer" allowfullscreen></iframe>
+        </div>
+      </div>
+      <h2 class="mb-4 mt-5"><i class="bi bi-stars feature-icon"></i>Key Features</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <h5><i class="bi bi-cloud-arrow-up feature-icon"></i>Cross-Platform Cloud Save</h5>
+          <p>Pick up your game on any device and continue where you left off.</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5><i class="bi bi-palette feature-icon"></i>Pixel Art Retro Style</h5>
+          <p>Evocative visuals that harken back to classic RPGs.</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5><i class="bi bi-hourglass-split feature-icon"></i>Offline Earnings</h5>
+          <p>Earn rewards even when the game is closed.</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5><i class="bi bi-controller feature-icon"></i>Incremental RPG Gameplay</h5>
+          <p>Level up, unlock skills, and master the idle grind.</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5><i class="bi bi-joystick feature-icon"></i>Free to Play</h5>
+          <p>No upfront cost, and no forced ads interrupting your adventure.</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5><i class="bi bi-trophy feature-icon"></i>A Lot of Content</h5>
+          <p>Over 600 achievements, boss fights, cutscenes, and lore.</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5><i class="bi bi-heart-pulse feature-icon"></i>Collaborations</h5>
+          <p>Special events once every often.</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h5><i class="bi bi-lightning-charge feature-icon"></i>Hidden Mechanics</h5>
+          <p>Discover random events and secret features.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section id="stats" class="bg-light py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center"><i class="bi bi-bar-chart-line"></i> Ratings</h2>
+      <div class="row text-center gy-4">
+        <div class="col-12 col-sm-12 col-md-4">
+          <div class="stat-number"><i class="bi bi-google-play"></i> 4.7 / 5.0 <i class="bi bi-star-fill" style="color:orange"></i></div>
+          <p>Google Play</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4">
+          <div class="stat-number"><i class="bi bi-apple"></i> 4.8 / 5.0 <i class="bi bi-star-fill" style="color:orange"></i></div>
+          <p>App Store</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4">
+          <div class="stat-number"><i class="bi bi-steam"></i> 86%<i class="bi bi-hand-thumbs-up-fill" style="color:green"></i></div>
+          <p>Steam</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6">
+          <div class="stat-number"><i class="bi bi-download"></i> 10M+</div>
+          <p>Downloads</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6">
+          <div class="stat-number"><i class="bi bi-discord"></i> 60K+</div>
+          <p>Discord Users</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaborations Section -->
+  <section id="collaborations" class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4"><i class="bi bi-people"></i> Collaborations</h2>
+      <div class="row justify-content-center gy-4">
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/upTzPbHy8AM" title="Shovel Knight Collab" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/tUYjMLD4G6c" title="Attack on Titan Collab" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Content Creators Section -->
+    <section id="collaborations" class="py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="mb-4"><i class="bi bi-person-video3"></i> Content Creators</h2>
+        <div class="row justify-content-center gy-4">
+          <div class="col-md-4">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/wDeSckQ9eSo" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/5uyoxSe22NU" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/ZjvkUq_0dX8" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/pthMhE7OI8M" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/JCKT94n7-oI" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/9MN1WPLSv8I" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center"><i class="bi bi-images"></i> Assets & Screenshots</h2>
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Store Logos.png" alt="Logo" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Phone Wallpaper.png" alt="Phone Wallpaper" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Discord Banner.png" alt="Discord Banner" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA.png" alt="Character Art 1" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA2.png" alt="Character Art 2" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA_ROY_V3.png" alt="Character Art 3" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Main Capsule.png" alt="Main Capsule" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/IGDB Capsule.png" alt="IGDB Capsule" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 1.png" alt="Screenshot 1" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 2.png" alt="Screenshot 2" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 3.png" alt="Screenshot 3" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 4.png" alt="Screenshot 4" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 5.png" alt="Screenshot 5" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 6.png" alt="Screenshot 6" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 7.png" alt="Screenshot 7" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 8.png" alt="Screenshot 8" class="img-fluid rounded"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <img src="" id="modalImage" alt="Full Screen">
+    </div>
+  </div>
+
+  <!-- Links Section -->
+  <section id="links" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4"><i class="bi bi-link-45deg"></i> Connect with Us</h2>
+      <div class="d-flex flex-wrap justify-content-center gap-2">
+        <a href="https://discord.gg/idleslayer" class="btn btn-primary" title="Discord"><i class="bi bi-discord"></i></a>
+        <a href="https://patreon.com/pabloleban" class="btn btn-secondary"><i class="bi bi-heart"></i> Patreon</a>
+        <a href="https://x.com/idleslayer" class="btn btn-dark" title="Idle Slayer X"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://reddit.com/r/idleslayer" class="btn btn-warning" style="color: white; background-color: #f54200;" title="Reddit"><i class="bi bi-reddit"></i></a>
+        <a href="https://idleslayer.fandom.com/wiki/Idle_Slayer_Wiki" class="btn btn-dark" title="Idle Slayer Wiki"><i class="bi bi-book"></i> Wiki</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center">
+    <p class="mb-1">By Pablo Leban &middot; Press Kit</p>
+    <p>Contact: <a href="mailto:pabloleban@idleslayer.com"><i class="bi bi-envelope"></i> pabloleban@idleslayer.com</a></p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Lightbox behavior for gallery
+    const modalEl = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    document.querySelectorAll('#gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+      });
+    });
+    // Close when clicking outside the image (backdrop handles this by default)
+    modalEl.addEventListener('click', (e) => {
+      if (e.target === modalEl) {
+        bootstrap.Modal.getInstance(modalEl).hide();
+      }
+    });
+  </script>
+
+<canvas id="fireCanvas"></canvas>
+<canvas id="fireCanvas"></canvas>
+<canvas id="fireCanvas"></canvas>
+<canvas id="fireCanvas"></canvas>
+<canvas id="fireCanvas"></canvas>
+<script>
+  const canvas = document.getElementById('fireCanvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let lastTime = performance.now();
+  const SPEED_MULTIPLIER = 2;
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height + Math.random() * 50;
+      this.vy = -(0.3 + Math.random() * 1) * 60 * SPEED_MULTIPLIER;
+      this.vx = (0.2 + Math.random() * 0.3) * 60 * SPEED_MULTIPLIER;
+      this.size = 2 + Math.random() * 4;
+      this.life = 3 + Math.random() * 5;
+      this.maxLife = this.life;
+      this.baseColor = [255, Math.floor(Math.random() * 155) + 100, 0];
+      this.isBlurred = Math.random() < 0.2; // 20% are extra‑soft
+    }
+    update(dt) {
+      this.x += this.vx * dt;
+      this.y += this.vy * dt;
+      this.life -= dt;
+      if (this.life <= 0 || this.y < -10) this.reset();
+    }
+    draw() {
+      const alpha = Math.max(this.life / this.maxLife, 0);
+      const [r, g, b] = this.baseColor;
+
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      // extra‑strong red shadow
+      ctx.shadowBlur = this.isBlurred ? 120 : 10;
+      // full red at max alpha
+      ctx.shadowColor = `rgba(255,0,0,1)`;
+      // optionally soften some particles
+      ctx.filter = this.isBlurred ? 'blur(6px)' : 'none';
+
+      ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function initParticles() {
+    particles = [];
+    for (let i = 0; i < 25; i++) {
+      const p = new Particle();
+      const t = Math.random() * p.maxLife;
+      p.x += p.vx * t;
+      p.y += p.vy * t;
+      p.life -= t;
+      particles.push(p);
+    }
+    lastTime = performance.now();
+  }
+
+  function animate(now) {
+    const dt = (now - lastTime) / 1000;
+    lastTime = now;
+
+    // full clear with gradient background
+    const grad = ctx.createLinearGradient(0, canvas.height, 0, 0);
+    grad.addColorStop(0, "#fd7e14");
+    grad.addColorStop(0.3, "#a56200");
+    grad.addColorStop(0.8, "#2b1a00");
+    grad.addColorStop(1, "black");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+      p.update(dt);
+      p.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  initParticles();
+  requestAnimationFrame(animate);
+</script>
+
+</body>
+</html>
