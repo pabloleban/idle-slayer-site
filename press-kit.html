@@ -13,10 +13,12 @@
     .hero {
       position: relative;
       overflow: hidden;
-      background: #000;
       color: white;
       padding: 6rem 0;
       text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+      background-image: url("img/press-kit/hero.png");
+      background-size: cover;
+      background-position-y: 100%;
     }
     .hero canvas {
       position: absolute;
@@ -68,7 +70,6 @@
 <body>
   <!-- Hero Section with Fire Particle Canvas -->
   <header class="hero text-center">
-    <canvas id="fireCanvas"></canvas>
     <div class="container">
       <img src="img/logo.png" alt="Idle Slayer Logo" class="img-fluid mb-4">
       <p class="lead">By Pablo Leban</p>
@@ -293,102 +294,5 @@
       }
     });
   </script>
-
-<canvas id="fireCanvas"></canvas>
-<canvas id="fireCanvas"></canvas>
-<canvas id="fireCanvas"></canvas>
-<canvas id="fireCanvas"></canvas>
-<canvas id="fireCanvas"></canvas>
-<script>
-  const canvas = document.getElementById('fireCanvas');
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  let lastTime = performance.now();
-  const SPEED_MULTIPLIER = 2;
-
-  function resize() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  class Particle {
-    constructor() { this.reset(); }
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = canvas.height + Math.random() * 50;
-      this.vy = -(0.3 + Math.random() * 1) * 60 * SPEED_MULTIPLIER;
-      this.vx = (0.2 + Math.random() * 0.3) * 60 * SPEED_MULTIPLIER;
-      this.size = 2 + Math.random() * 4;
-      this.life = 3 + Math.random() * 5;
-      this.maxLife = this.life;
-      this.baseColor = [255, Math.floor(Math.random() * 155) + 100, 0];
-      this.isBlurred = Math.random() < 0.2; // 20% are extra‑soft
-    }
-    update(dt) {
-      this.x += this.vx * dt;
-      this.y += this.vy * dt;
-      this.life -= dt;
-      if (this.life <= 0 || this.y < -10) this.reset();
-    }
-    draw() {
-      const alpha = Math.max(this.life / this.maxLife, 0);
-      const [r, g, b] = this.baseColor;
-
-      ctx.save();
-      ctx.globalCompositeOperation = 'lighter';
-      // extra‑strong red shadow
-      ctx.shadowBlur = this.isBlurred ? 120 : 10;
-      // full red at max alpha
-      ctx.shadowColor = `rgba(255,0,0,1)`;
-      // optionally soften some particles
-      ctx.filter = this.isBlurred ? 'blur(6px)' : 'none';
-
-      ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-
-  function initParticles() {
-    particles = [];
-    for (let i = 0; i < 25; i++) {
-      const p = new Particle();
-      const t = Math.random() * p.maxLife;
-      p.x += p.vx * t;
-      p.y += p.vy * t;
-      p.life -= t;
-      particles.push(p);
-    }
-    lastTime = performance.now();
-  }
-
-  function animate(now) {
-    const dt = (now - lastTime) / 1000;
-    lastTime = now;
-
-    // full clear with gradient background
-    const grad = ctx.createLinearGradient(0, canvas.height, 0, 0);
-    grad.addColorStop(0, "#fd7e14");
-    grad.addColorStop(0.3, "#a56200");
-    grad.addColorStop(0.8, "#2b1a00");
-    grad.addColorStop(1, "black");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach(p => {
-      p.update(dt);
-      p.draw();
-    });
-    requestAnimationFrame(animate);
-  }
-
-  initParticles();
-  requestAnimationFrame(animate);
-</script>
-
 </body>
 </html>
