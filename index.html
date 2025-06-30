@@ -1,207 +1,231 @@
 <html>
-    <head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ2E4V50Z5"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
 
-		  gtag('config', 'G-HJ2E4V50Z5');
-		</script>
-	
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
-        <link rel="icon" href="img/favicon.png">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ2E4V50Z5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        <meta name="viewport" content="width=device-width, user-scalable=no">
+        gtag('config', 'G-HJ2E4V50Z5');
+    </script>
 
-		<title>Idle Slayer - Home</title>
-        
-        <style>
-            body {
-                background: linear-gradient(135deg, #FF9F1C, #FF6F59);
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="icon" href="img/favicon.png">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <title>Idle Slayer - Home</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #FF9F1C, #FF6F59);
+        }
+
+        .logo {
+            width: 100%
+        }
+
+        a {
+            color: black;
+        }
+
+        .anna-full {
+            position: relative;
+        }
+
+        .anna-full>img:not(:first-child) {
+            position: absolute;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            padding-left: inherit;
+            padding-right: inherit;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
             }
 
-            .logo {
-                width: 100%
+            50% {
+                transform: translatey(-20px);
             }
 
-            a {
-                color: black;
+            100% {
+                transform: translatey(0px);
             }
-            
-            .anna-full {
-                position: relative;
+        }
+
+        .anna-full .anna {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+            padding: 0 5px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+
+        .video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .social-logos img {
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            filter: invert(1);
+        }
+
+        .social-logos img:hover {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .stores img {
+            transition: all 0.3s ease;
+        }
+
+        .stores img:hover {
+            transform: scale(1.1);
+        }
+
+        @media only screen and (max-width: 1400px) {
+            .stores>div>div {
+                padding-bottom: 20px;
             }
 
-            .anna-full > img:not(:first-child){
-                position: absolute;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                top: 0;
-                padding-left: inherit;
-                padding-right: inherit;
+            .stores>.row {
+                --bs-gutter-x: 0;
             }
+        }
 
-            @keyframes float {
-                0% {
-                    transform: translatey(0px);
-                }
-                50% {
-                    transform: translatey(-20px);
-                }
-                100% {
-                    transform: translatey(0px);
-                }
-            }
-
-            .anna-full .anna{
-                animation: float 6s ease-in-out infinite;
-            }
-
+        @media only screen and (max-width: 767px) {
             li {
                 list-style: none;
-                display: inline-block;
-                padding: 0 5px;
-            }
-            .video-container {
-                position: relative;
+                display: block;
+                padding: 5px 0px;
                 width: 100%;
-                padding-bottom: 56.25%;
             }
+        }
+    </style>
 
-            .video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 0;
-            }
+</head>
 
-            .social-logos img {
-                opacity: 0.6;
-                transition: all 0.3s ease;
-				filter: invert(1);
-            }
-
-            .social-logos img:hover {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-
-            .stores img{
-                transition: all 0.3s ease;
-            }
-
-            .stores img:hover{
-                transform: scale(1.1);
-            }
-
-            @media only screen and (max-width: 1400px) {
-                .stores > div > div {
-                    padding-bottom: 20px;
-                }
-
-                .stores > .row {
-                    --bs-gutter-x : 0;
-                }
-            }
-
-            @media only screen and (max-width: 767px) {
-                li {
-                    list-style: none;
-                    display: block;
-                    padding: 5px 0px;
-                    width: 100%;
-                }
-            }
-        </style>
-
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-8 col-8 col-lg-4 mt-5 mx-auto">
-                    <a href="./"><img src="img/logo.png" class="logo"></a>
-                    <p class="text-center"><b>by Pablo Leban</b></p>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-8 col-8 col-lg-4 mt-5 mx-auto">
+                <a href="./"><img src="img/logo.png" class="logo"></a>
+                <p class="text-center"><b>by Pablo Leban</b></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6 my-auto">
+                <div class="video-container my-3">
+                    <iframe class="video" height="315" width="560"
+                        src="https://www.youtube.com/embed/O4NWLfjgZ78?rel=0&autoplay=1&mute=1&controls=0"
+                        frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 col-lg-6 my-auto">
-                    <div class="video-container my-3">
-                        <iframe class="video" height="315" width="560" src="https://www.youtube.com/embed/O4NWLfjgZ78?rel=0&autoplay=1&mute=1&controls=0" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xs-none my-auto anna-full">
-                    <img class="w-100 d-lg-block d-md-none d-sm-none d-none background" src="img/1.png">
-                    <img class="w-100 d-lg-block d-md-none d-sm-none d-none random-boxes" src="img/2.png">
-                    <img class="w-100 d-lg-block d-md-none d-sm-none d-none anna" src="img/3.png">
-                    <img class="w-100 d-lg-block d-md-none d-sm-none d-none coins" src="img/4.png">
-                </div>
+            <div class="col-lg-6 col-xs-none my-auto anna-full">
+                <img class="w-100 d-lg-block d-md-none d-sm-none d-none background" src="img/1.png">
+                <img class="w-100 d-lg-block d-md-none d-sm-none d-none random-boxes" src="img/2.png">
+                <img class="w-100 d-lg-block d-md-none d-sm-none d-none anna" src="img/3.png">
+                <img class="w-100 d-lg-block d-md-none d-sm-none d-none coins" src="img/4.png">
             </div>
-            <div class="col-xxl-8 col-xl-8 col-md-12 col-sm-8 col-8 mx-auto row stores">
-                <div class="row g-0">
-                    <div class="col-xxl-4 col-xl-4 col-md-4 mx-auto px-2">
-                        <a class="d-inline-block w-100" href='https://play.google.com/store/apps/details?id=com.pabloleban.IdleSlayer&hl=en_US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-                            <img class="w-100" alt="Google Play" title='Get it on Google Play' src='img/home/googlebadge.png'/>
-                        </a>
-                    </div>
-                    <div class="col-xxl-4 col-xl-4 col-md-4 mx-auto px-2">
-                        <a class="d-inline-block w-100" href='https://apps.apple.com/us/app/idle-slayer/id1526599527'>
-                            <img class="w-100" alt="App Store" title='Download on the App Store' src='img/home/applebadge.png'/>
-                        </a>
-                    </div>
-                    <div class="col-xxl-4 col-xl-4 col-md-4 mx-auto px-2">
-                        <a class="d-inline-block w-100" href='https://store.steampowered.com/app/1353300/Idle_Slayer/'>
-                            <img class="w-100" alt="Steam" title='Get it on Steam' src='img/home/steam-logo.png'/>
-                        </a>
-                    </div>
+        </div>
+        <div class="col-xxl-8 col-xl-8 col-md-12 col-sm-8 col-8 mx-auto row stores">
+            <div class="row g-0">
+                <div class="col-xxl-4 col-xl-4 col-md-4 mx-auto px-2">
+                    <a class="d-inline-block w-100"
+                        href='https://play.google.com/store/apps/details?id=com.pabloleban.IdleSlayer&hl=en_US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+                        <img class="w-100" alt="Google Play" title='Get it on Google Play'
+                            src='img/home/googlebadge.png' />
+                    </a>
                 </div>
-            </div>
-            <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 col-sm-12 col-12 mx-auto row social-logos mt-5">
-                <div class="row g-0">
-                    <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-2">
-                        <a class="d-inline-block w-100" target="_blank" href='https://discord.gg/idleslayer'>
-                            <img class="w-100" title="Join Discord" alt="Discord" src='img/social/discord.png'/>
-                        </a>
-                    </div>
-                    <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-2">
-                        <a class="d-inline-block w-100" target="_blank" href='https://patreon.com/pabloleban'>
-                            <img class="w-100" title="Join Patreon" alt="Patreon" src='img/social/patreon.png'/>
-                        </a>
-                    </div>
-                    <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-2">
-                        <a class="d-inline-block w-100" target="_blank" href='https://x.com/idleslayer'>
-                            <img class="w-100" alt="Follow on X" src='img/social/x.png'/>
-                        </a>
-                    </div>
-                    <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-2">
-                        <a class="d-inline-block w-100" target="_blank" href='https://reddit.com/r/idleslayer'>
-                            <img class="w-100" alt="Join Reddit" src='img/social/reddit.png'/>
-                        </a>
-                    </div>
-                    <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-2">
-                        <a class="d-inline-block w-100" target="_blank" href='https://idleslayer.fandom.com/wiki/Idle_Slayer_Wiki'>
-                            <img class="w-100" alt="Idle Slayer Wiki" src='img/social/wiki.png'/>
-                        </a>
-                    </div>
+                <div class="col-xxl-4 col-xl-4 col-md-4 mx-auto px-2">
+                    <a class="d-inline-block w-100" href='https://apps.apple.com/us/app/idle-slayer/id1526599527'>
+                        <img class="w-100" alt="App Store" title='Download on the App Store'
+                            src='img/home/applebadge.png' />
+                    </a>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-md-4 mx-auto px-2">
+                    <a class="d-inline-block w-100" href='https://store.steampowered.com/app/1353300/Idle_Slayer/'>
+                        <img class="w-100" alt="Steam" title='Get it on Steam' src='img/home/steam-logo.png' />
+                    </a>
                 </div>
             </div>
         </div>
-    </body>
-    <footer class="mt-5 text-center">
-        <ul class="p-0">
-			<li><a href="./calculator"><button type="button" class="btn btn-outline-dark"><i class="bi bi-calculator"></i> Calculator</button></a></li>
-			<li><a href="./translation"><button type="button" class="btn btn-outline-dark"><i class="bi bi-translate"></i> Translation</button></a></li>
-			<li><a href="./privacy-policy"><button type="button" class="btn btn-outline-dark"><i class="bi bi-shield-check"></i> Privacy Policy</button></a></li>
-            <li><a href="./account"><button type="button" class="btn btn-outline-dark"><i class="bi bi-person-gear"></i> My Account</button></a></li>
-            <li><a href="./press-kit"><button type="button" class="btn btn-outline-dark"><i class="bi bi-paperclip"></i> Press Kit</button></a></li>
-			<li><a href="mailto:pabloleban@idleslayer.com"><button type="button" class="btn btn-outline-dark"><i class="bi bi-envelope"></i> Contact Me</button></a></li>
-        </ul>
-    </footer>
+        <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 col-sm-12 col-12 mx-auto row social-logos mt-5">
+            <div class="row g-0">
+                <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-3" title="Join Discord">
+                    <a class="d-inline-block w-100" target="_blank" href='https://discord.gg/idleslayer'>
+                        <img class="w-100" alt="Discord" src='img/social/discord.png' />
+                    </a>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-3" title="Join Patreon">
+                    <a class="d-inline-block w-100" target="_blank" href='https://patreon.com/pabloleban'>
+                        <img class="w-100" alt="Patreon" alt="Patreon" src='img/social/patreon.png' />
+                    </a>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-3" title="Follow on X">
+                    <a class="d-inline-block w-100" target="_blank" href='https://x.com/idleslayer'>
+                        <img class="w-100" alt="X" src='img/social/x.png' />
+                    </a>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-3" title="Join Reddit">
+                    <a class="d-inline-block w-100" target="_blank" href='https://reddit.com/r/idleslayer'>
+                        <img class="w-100" alt="Reddit" src='img/social/reddit.png' />
+                    </a>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-3" title="Idle Slayer Wiki">
+                    <a class="d-inline-block w-100" target="_blank"
+                        href='https://idleslayer.fandom.com/wiki/Idle_Slayer_Wiki'>
+                        <img class="w-100" alt="Idle Slayer Wiki" src='img/social/wiki.png' />
+                    </a>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mx-auto px-3" title="Content Creator Program">
+                    <a class="d-inline-block w-100" target="_blank" href='https://www.nexus.gg/idle-slayer'>
+                        <img class="w-100" alt="Content Creator Program" src='img/social/nexus.png' />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="mt-5 text-center">
+    <ul class="p-0">
+        <li><a href="./calculator"><button type="button" class="btn btn-outline-dark"><i class="bi bi-calculator"></i>
+                    Calculator</button></a></li>
+        <li><a href="./translation"><button type="button" class="btn btn-outline-dark"><i class="bi bi-translate"></i>
+                    Translation</button></a></li>
+        <li><a href="./privacy-policy"><button type="button" class="btn btn-outline-dark"><i
+                        class="bi bi-shield-check"></i> Privacy Policy</button></a></li>
+        <li><a href="./account"><button type="button" class="btn btn-outline-dark"><i class="bi bi-person-gear"></i> My
+                    Account</button></a></li>
+        <li><a href="./press-kit"><button type="button" class="btn btn-outline-dark"><i class="bi bi-paperclip"></i>
+                    Press Kit</button></a></li>
+        <li><a href="mailto:pabloleban@idleslayer.com"><button type="button" class="btn btn-outline-dark"><i
+                        class="bi bi-envelope"></i> Contact Me</button></a></li>
+    </ul>
+</footer>
+
 </html>
