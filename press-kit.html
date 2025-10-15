@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,51 +18,123 @@
       overflow: hidden;
       color: white;
       padding: 6rem 0;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
       background-image: url("img/press-kit/hero.png");
       background-size: cover;
       background-position-y: 100%;
     }
+
     .hero canvas {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: 0;
     }
+
     .hero .container {
       position: relative;
       z-index: 1;
     }
+
     .badge-img {
       height: 60px;
       margin: 0 0.5rem;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
     }
+
     .stat-number {
       font-size: 2.5rem;
       font-weight: bold;
     }
+
     .feature-icon {
       margin-right: 0.5rem;
       color: orange;
     }
-    section { padding: 4rem 0; }
+
+    section {
+      padding: 4rem 0;
+    }
+
     #gallery img {
       max-height: 300px;
       object-fit: cover;
       cursor: pointer;
     }
-    #gallery .col-sm-6, #gallery .col-md-4, #gallery .col-lg-3 {
+
+    #gallery .col-sm-6,
+    #gallery .col-md-4,
+    #gallery .col-lg-3 {
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 1rem;
     }
 
+    .gallery-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      display: block;
+      max-height: 300px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .gallery-item .download-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 2;
+    }
+
+    .gallery-item:hover .download-btn {
+      opacity: 1;
+    }
+
+    .gallery-item .download-btn .btn {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+
     /* Modal styling with margins */
-    .modal-dialog { max-width: 90%; margin: 1.5rem auto; }
-    .modal-content { display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.8); border: none; }
-    #modalImage { max-height: 90vh; max-width: 100%; width: auto; margin: auto; display: block; }
+    .modal-dialog {
+      max-width: 90%;
+      margin: 1.5rem auto;
+    }
+
+    .modal-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.8);
+      border: none;
+    }
+
+    #modalImage {
+      max-height: 90vh;
+      max-width: 100%;
+      width: auto;
+      margin: auto;
+      display: block;
+    }
+
     @media (max-width: 991px) {
       .stat-number {
         font-size: 30px;
@@ -69,6 +142,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Hero Section with Fire Particle Canvas -->
   <header class="hero text-center">
@@ -146,15 +220,18 @@
       <h2 class="mb-4 text-center"><i class="bi bi-bar-chart-line-fill"></i> Ratings</h2>
       <div class="row text-center gy-4">
         <div class="col-12 col-sm-12 col-md-4">
-          <div class="stat-number"><i class="bi bi-google-play"></i> 4.7<span style="font-size: 40%;"> / 5.0 </span> <i class="bi bi-star-fill" style="color:orange"></i></div>
+          <div class="stat-number"><i class="bi bi-google-play"></i> 4.7<span style="font-size: 40%;"> / 5.0 </span> <i
+              class="bi bi-star-fill" style="color:orange"></i></div>
           <p>Google Play</p>
         </div>
         <div class="col-12 col-sm-12 col-md-4">
-          <div class="stat-number"><i class="bi bi-apple"></i> 4.8<span style="font-size: 40%;"> / 5.0 </span> <i class="bi bi-star-fill" style="color:orange"></i></div>
+          <div class="stat-number"><i class="bi bi-apple"></i> 4.8<span style="font-size: 40%;"> / 5.0 </span> <i
+              class="bi bi-star-fill" style="color:orange"></i></div>
           <p>App Store</p>
         </div>
         <div class="col-12 col-sm-12 col-md-4">
-          <div class="stat-number"><i class="bi bi-steam"></i> 86%<i class="bi bi-hand-thumbs-up-fill" style="color:green"></i></div>
+          <div class="stat-number"><i class="bi bi-steam"></i> 86%<i class="bi bi-hand-thumbs-up-fill"
+              style="color:green"></i></div>
           <p>Steam</p>
         </div>
       </div>
@@ -179,7 +256,7 @@
         </div>
       </div>
     </div>
-  </section>  
+  </section>
   <!-- Stats Section -->
   <section id="community-stats" class="bg-light py-5">
     <div class="container">
@@ -199,7 +276,7 @@
         </div>
       </div>
     </div>
-  </section>  
+  </section>
 
   <!-- Collaborations Section -->
   <section id="collaborations" class="py-5">
@@ -208,86 +285,225 @@
       <div class="row justify-content-center gy-4">
         <div class="col-md-6">
           <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/upTzPbHy8AM" title="Shovel Knight Collab" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/upTzPbHy8AM" title="Shovel Knight Collab"
+              allowfullscreen></iframe>
           </div>
         </div>
         <div class="col-md-6">
           <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/tUYjMLD4G6c" title="Attack on Titan Collab" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/tUYjMLD4G6c" title="Attack on Titan Collab"
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-    <!-- Content Creators Section -->
-    <section id="collaborations" class="py-5 bg-light">
-      <div class="container text-center">
-        <h2 class="mb-4"><i class="bi bi-person-video3"></i> Content Creators</h2>
-        <div class="row justify-content-center gy-4">
-          <div class="col-md-4">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/wDeSckQ9eSo" allowfullscreen></iframe>
-            </div>
+  <!-- Content Creators Section -->
+  <section id="collaborations" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4"><i class="bi bi-person-video3"></i> Content Creators</h2>
+      <div class="row justify-content-center gy-4">
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/wDeSckQ9eSo" allowfullscreen></iframe>
           </div>
-          <div class="col-md-4">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/5uyoxSe22NU" allowfullscreen></iframe>
-            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/5uyoxSe22NU" allowfullscreen></iframe>
           </div>
-          <div class="col-md-4">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/ZjvkUq_0dX8" allowfullscreen></iframe>
-            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/ZjvkUq_0dX8" allowfullscreen></iframe>
           </div>
-          <div class="col-md-4">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/pthMhE7OI8M" allowfullscreen></iframe>
-            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/pthMhE7OI8M" allowfullscreen></iframe>
           </div>
-          <div class="col-md-4">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/JCKT94n7-oI" allowfullscreen></iframe>
-            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/JCKT94n7-oI" allowfullscreen></iframe>
           </div>
-          <div class="col-md-4">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/9MN1WPLSv8I" allowfullscreen></iframe>
-            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/9MN1WPLSv8I" allowfullscreen></iframe>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <!-- Gallery Section -->
   <section id="gallery" class="py-5">
     <div class="container">
-      <h2 class="mb-4 text-center"><i class="bi bi-images"></i> Assets & Screenshots</h2>
+      <h2 class="mb-4 text-center"><i class="bi bi-images"></i> Artwork</h2>
       <div class="row g-3">
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Logo HD.png" alt="Logo" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Phone Wallpaper.png" alt="Phone Wallpaper" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Discord Banner.png" alt="Discord Banner" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA.png" alt="Character Art 1" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA2.png" alt="Character Art 2" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA_ROY_V3.png" alt="Character Art 3" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Main Capsule.png" alt="Main Capsule" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/IGDB Capsule.png" alt="IGDB Capsule" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 1.png" alt="Screenshot 1" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 2.png" alt="Screenshot 2" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 3.png" alt="Screenshot 3" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 4.png" alt="Screenshot 4" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 5.png" alt="Screenshot 5" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 6.png" alt="Screenshot 6" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 7.png" alt="Screenshot 7" class="img-fluid rounded"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 8.png" alt="Screenshot 8" class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Logo HD.png" alt="Logo"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Phone Wallpaper.png" alt="Phone Wallpaper"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Discord Banner.png" alt="Discord Banner"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA.png" alt="Character Art 1"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA2.png" alt="Character Art 2"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA_ROY_V3.png" alt="Character Art 3"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Main Capsule.png" alt="Main Capsule"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/IGDB Capsule.png" alt="IGDB Capsule"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Haskell.png" alt="Haskell"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/AZURE.png" alt="Azure"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA_RABBIT_SKIN_2.png" alt="Anna Bunny Outfit"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/ANNA_WITCH.png" alt="Anna Witch Outfit"
+            class="img-fluid rounded"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center"><i class="bi bi-images"></i> Screenshots</h2>
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 1.png" alt="Screenshot 1"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 2.png" alt="Screenshot 2"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 3.png" alt="Screenshot 3"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 4.png" alt="Screenshot 4"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 5.png" alt="Screenshot 5"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 6.png" alt="Screenshot 6"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 7.png" alt="Screenshot 7"
+            class="img-fluid rounded"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3"><img src="img/press-kit/Editor Screenshot 8.png" alt="Screenshot 8"
+            class="img-fluid rounded"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos Section -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center"><i class="bi bi-images"></i> Videos</h2>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1v97JYj0HijpDuye3Z2j61VNk__t0XkkL/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1Y8S_k_liZbaMHsvCeOUduf5iwsXxDO49/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1q6_T6RosgCvEbuk4zMLwWLwdmbkz_pEL/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1VTgAPk3e_zUmfg1mK1PsKuIQYdqFyWlw/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1h1C9B1zgANSY7Kl2enaiQvlaIQ7Tepvf/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1cHI_-pp7B55inSZFwpge-UDP3Tk9R-Zk/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/12EUDt6xqWbAMyh7S67UZdjr9WSBvdYDE/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1P0qmJtRnBPK8tsc4tESjAcf4Pc_2vpYs/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1g_ONXve_9ptNN9JPqJrT0ThXtZUPO6WE/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1TJsgHPP6zVDrqhEoXqP3Kxt4KuAx1_Tl/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1OOTZ90WzRP2u-oDOZ7rD5BQcugMH9fAM/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1wu1p3nVUQsw_VtsXsfMW8yqLAZ6kSvvl/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1I0DOlrwxnPr162DVuUS_Ld1fNB7zRWpq/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1fO96T1EPS7uOXThF9fKEmLCazfJmX9GV/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://drive.google.com/file/d/1TaiYObgGFtQFLb5F05vyKq-q_LaP2uos/preview" width="640"
+              height="480" allow="autoplay" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Image Modal -->
-  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="true">
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
-      <img src="" id="modalImage" alt="Full Screen">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 d-flex justify-content-center align-items-center" style="position: relative;">
+          <img src="" id="modalImage" alt="Full Screen" class="img-fluid"
+            style="max-height: 90vh; width:auto; display:block; margin:auto;">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -296,11 +512,15 @@
     <div class="container text-center">
       <h2 class="mb-4"><i class="bi bi-link-45deg"></i> Connect with Us</h2>
       <div class="d-flex flex-wrap justify-content-center gap-2">
-        <a href="https://discord.gg/idleslayer" class="btn btn-primary" title="Discord"><i class="bi bi-discord"></i></a>
+        <a href="https://discord.gg/idleslayer" class="btn btn-primary" title="Discord"><i
+            class="bi bi-discord"></i></a>
         <a href="https://patreon.com/pabloleban" class="btn btn-secondary"><i class="bi bi-heart"></i> Patreon</a>
-        <a href="https://x.com/idleslayer" class="btn btn-dark" title="Idle Slayer X"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://reddit.com/r/idleslayer" class="btn btn-warning" style="color: white; background-color: #f54200;" title="Reddit"><i class="bi bi-reddit"></i></a>
-        <a href="https://idleslayer.fandom.com/wiki/Idle_Slayer_Wiki" class="btn btn-dark" title="Idle Slayer Wiki"><i class="bi bi-book"></i> Wiki</a>
+        <a href="https://x.com/idleslayer" class="btn btn-dark" title="Idle Slayer X"><i
+            class="bi bi-twitter-x"></i></a>
+        <a href="https://reddit.com/r/idleslayer" class="btn btn-warning"
+          style="color: white; background-color: #f54200;" title="Reddit"><i class="bi bi-reddit"></i></a>
+        <a href="https://idleslayer.fandom.com/wiki/Idle_Slayer_Wiki" class="btn btn-dark" title="Idle Slayer Wiki"><i
+            class="bi bi-book"></i> Wiki</a>
       </div>
     </div>
   </section>
@@ -308,29 +528,65 @@
   <!-- Footer -->
   <footer class="py-4 text-center">
     <p class="mb-1">By Pablo Leban &middot; Press Kit</p>
-    <p>Contact: <a href="mailto:pabloleban@idleslayer.com"><i class="bi bi-envelope"></i> pabloleban@idleslayer.com</a></p>
+    <p>Contact: <a href="mailto:pabloleban@idleslayer.com"><i class="bi bi-envelope"></i> pabloleban@idleslayer.com</a>
+    </p>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // Lightbox behavior for gallery
     const modalEl = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
-    document.querySelectorAll('#gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        modalImg.src = img.src;
+
+    // Crear overlay con botón de descarga
+    document.querySelectorAll('#gallery .col-sm-6, #gallery .col-md-4, #gallery .col-lg-3').forEach(cell => {
+      const img = cell.querySelector('img');
+      if (!img) return;
+
+      // Envolver cada imagen
+      const wrapper = document.createElement('div');
+      wrapper.className = 'gallery-item w-100 h-100';
+      img.parentNode.insertBefore(wrapper, img);
+      wrapper.appendChild(img);
+
+      const src = img.getAttribute('src');
+      const filename = src.split('/').pop();
+
+      // Crear botón de descarga
+      const overlay = document.createElement('div');
+      overlay.className = 'download-btn';
+
+      const a = document.createElement('a');
+      a.href = src;
+      a.download = filename;
+      a.className = 'btn btn-success shadow';
+      a.innerHTML = '<i class="bi bi-download fs-5"></i>';
+
+      overlay.appendChild(a);
+      wrapper.appendChild(overlay);
+
+      // Mostrar modal al clickear imagen (no el botón)
+      wrapper.addEventListener('click', e => {
+        if (e.target === a || a.contains(e.target)) return;
+        modalImg.src = src;
         const modal = new bootstrap.Modal(modalEl);
         modal.show();
       });
     });
-    // Close when clicking outside the image (backdrop handles this by default)
-    modalEl.addEventListener('click', (e) => {
-      if (e.target === modalEl) {
-        bootstrap.Modal.getInstance(modalEl).hide();
+
+    // Permitir cerrar al hacer clic fuera de la imagen
+    modalEl.addEventListener('click', e => {
+      const img = modalImg;
+      const instance = bootstrap.Modal.getInstance(modalEl);
+      if (instance && !img.contains(e.target)) {
+        instance.hide();
       }
     });
   </script>
+
+
+
 </body>
+
 </html>
