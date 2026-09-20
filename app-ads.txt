@@ -6,7 +6,7 @@
 OWNERDOMAIN=idleslayer.com
 
 # Google AdMob
-google.com, pub-2650039687890874, DIRECT, f08c47fec0942fa0
+google.com, pub-5080935752211857, DIRECT, f08c47fec0942fa0
 
 # ironSource Ads / Unity LevelPlay (publisher 410531)
 ironsrc.com, 410531, DIRECT, 79929e88b2ba73bc
