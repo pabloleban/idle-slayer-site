@@ -61,6 +61,54 @@
     .container-custom {
       max-width: 500px;
     }
+    /* Google and Apple buttons follow each brand's sign-in button guidelines. */
+    .btn-provider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      font-weight: 500;
+      padding: 0.55rem 1rem;
+    }
+    .btn-provider svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    .btn-google {
+      background: #fff;
+      color: #3c4043;
+      border: 1px solid #dadce0;
+      font-family: Roboto, Arial, sans-serif;
+    }
+    .btn-google:hover {
+      background: #f8f9fa;
+      color: #3c4043;
+    }
+    .btn-apple {
+      background: #000;
+      color: #fff;
+      border: 1px solid #000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    }
+    .btn-apple:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #888;
+      font-size: 0.9rem;
+      margin: 1.25rem 0;
+    }
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      border-top: 1px solid #ddd;
+    }
   </style>
 
   <!-- Firebase SDK (Compat) -->
@@ -80,7 +128,7 @@
         <h2>My Account</h2>
       </div>
       <div id="deleteAccountNotice" class="alert alert-warning text-center d-none">
-        To delete your account, please log in with your password.
+        To delete your account, please sign in the same way you do in the game.
       </div>
       <div class="card-body" id="card-body">
         <!-- Aquí se inyectará el contenido según el estado de autenticación -->
@@ -90,20 +138,69 @@
 
   <script>
     // Configuración de Firebase
+    // authDomain es el dominio de Firebase y no idleslayer.com: este sitio está en GitHub Pages, que no
+    // sirve /__/auth/handler, y sin él no funciona el login con Google o Apple. Ese handler ya está
+    // aceptado por el cliente web de Google y por el Services ID de Apple.
     var firebaseConfig = {
       apiKey: "AIzaSyA619RzvC0SLFVOGxv3sVzfovgojTnVm5s",
-      authDomain: "idleslayer.com",
+      authDomain: "idle-slayer-76996464.firebaseapp.com",
       projectId: "idle-slayer-76996464",
     };
     firebase.initializeApp(firebaseConfig);
 
     const cardBody = document.getElementById('card-body');
 
+    const GOOGLE_LOGO = `<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>`;
+    const APPLE_LOGO = `<svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>`;
+
+    function providerFor(providerId) {
+      if (providerId === 'apple.com') {
+        const provider = new firebase.auth.OAuthProvider('apple.com');
+        provider.addScope('email');
+        provider.addScope('name');
+        return provider;
+      }
+      return new firebase.auth.GoogleAuthProvider();
+    }
+
+    // null = nada que mostrar (el jugador cerró la ventana).
+    function authErrorMessage(error) {
+      switch (error.code) {
+        case 'auth/popup-closed-by-user':
+        case 'auth/cancelled-popup-request':
+          return null;
+        case 'auth/popup-blocked':
+          return 'Your browser blocked the sign-in window. Allow pop-ups for this site and try again.';
+        case 'auth/account-exists-with-different-credential':
+          return 'This email already has an Idle Slayer account with a different sign-in method. Sign in the same way you do in the game.';
+        case 'auth/requires-recent-login':
+          return 'For your security, sign out and sign in again, then retry.';
+        default:
+          return error.message;
+      }
+    }
+
+    function showError(elementId, error) {
+      const message = authErrorMessage(error);
+      if (message) document.getElementById(elementId).innerHTML = `<div class="alert alert-danger">${escapeHtml(message)}</div>`;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text == null ? '' : String(text);
+      return div.innerHTML;
+    }
+
     // Función para renderizar el formulario de inicio de sesión
     function renderSignInForm() {
       cardBody.innerHTML = `
         <div class="mb-3">
           <h4 class="text-center mb-4">Sign In</h4>
+          <div class="d-grid gap-2">
+            <button type="button" id="googleSignInBtn" class="btn btn-provider btn-google">${GOOGLE_LOGO}<span>Sign in with Google</span></button>
+            <button type="button" id="appleSignInBtn" class="btn btn-provider btn-apple">${APPLE_LOGO}<span>Sign in with Apple</span></button>
+          </div>
+          <div class="divider">or with your email</div>
           <form id="signInForm">
             <div class="mb-3">
               <label for="signInEmail" class="form-label">Email</label>
@@ -123,6 +220,18 @@
           <div id="signInMessage" class="mt-3"></div>
         </div>
       `;
+      ['google.com', 'apple.com'].forEach(function(providerId) {
+        const buttonId = providerId === 'apple.com' ? 'appleSignInBtn' : 'googleSignInBtn';
+        document.getElementById(buttonId).addEventListener('click', function() {
+          document.getElementById('signInMessage').innerHTML = '';
+          firebase.auth().signInWithPopup(providerFor(providerId))
+            .then((result) => {
+              renderAccountManagement(result.user);
+            })
+            .catch((error) => showError('signInMessage', error));
+        });
+      });
+
       document.getElementById('signInForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const email = document.getElementById('signInEmail').value;
@@ -131,9 +240,7 @@
           .then((userCredential) => {
             renderAccountManagement(userCredential.user);
           })
-          .catch((error) => {
-            document.getElementById('signInMessage').innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
-          });
+          .catch((error) => showError('signInMessage', error));
       });
       document.getElementById('forgotPasswordLink').addEventListener('click', function(e) {
         e.preventDefault();
@@ -180,13 +287,21 @@
 
     // Función para renderizar las opciones de gestión de cuenta
     function renderAccountManagement(user) {
+      const providers = user.providerData.map((info) => info.providerId);
+      const hasPassword = providers.includes('password');
+      // Google or Apple; with several, the first one is enough to sign in again before deleting.
+      const socialProvider = providers.find((id) => id === 'google.com' || id === 'apple.com');
+      const socialName = socialProvider === 'apple.com' ? 'Apple' : 'Google';
+
       cardBody.innerHTML = `
         <div class="mb-4">
-          <h4 class="text-center">Welcome, ${user.email}</h4>
+          <h4 class="text-center">Welcome, ${escapeHtml(user.email || user.displayName || 'Slayer')}</h4>
+          ${socialProvider ? `<p class="text-center text-muted mb-0">Signed in with ${socialName}</p>` : ''}
           <div class="text-center">
             <button id="signOutBtn" class="btn btn-secondary btn-sm mt-2">Sign Out</button>
           </div>
         </div>
+        ${hasPassword ? `
         <div>
           <h5>Update Email</h5>
           <form id="updateEmailForm">
@@ -214,7 +329,7 @@
           </form>
           <div id="changePasswordMessage" class="mt-2"></div>
         </div>
-        <hr>
+        <hr>` : ''}
         <div class="text-center">
           <h5>Delete Account</h5>
           <button id="deleteAccountBtn" class="btn btn-danger btn-sm">Delete Idle Slayer Account</button>
@@ -228,35 +343,55 @@
         });
       });
 
-      document.getElementById('updateEmailForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const newEmail = document.getElementById('newEmail').value;
-        user.updateEmail(newEmail).then(() => {
-          document.getElementById('updateEmailMessage').innerHTML = `<div class="alert alert-success">Email updated successfully.</div>`;
-          renderAccountManagement(user);
-        }).catch((error) => {
-          document.getElementById('updateEmailMessage').innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+      // Email and password only exist for accounts that have a password; Google and Apple manage theirs.
+      if (hasPassword) {
+        document.getElementById('updateEmailForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const newEmail = document.getElementById('newEmail').value;
+          user.updateEmail(newEmail).then(() => {
+            document.getElementById('updateEmailMessage').innerHTML = `<div class="alert alert-success">Email updated successfully.</div>`;
+            renderAccountManagement(user);
+          }).catch((error) => showError('updateEmailMessage', error));
         });
-      });
 
-      document.getElementById('changePasswordForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const newPassword = document.getElementById('newPassword').value;
-        user.updatePassword(newPassword).then(() => {
-          document.getElementById('changePasswordMessage').innerHTML = `<div class="alert alert-success">Password changed successfully.</div>`;
-        }).catch((error) => {
-          document.getElementById('changePasswordMessage').innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+        document.getElementById('changePasswordForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const newPassword = document.getElementById('newPassword').value;
+          user.updatePassword(newPassword).then(() => {
+            document.getElementById('changePasswordMessage').innerHTML = `<div class="alert alert-success">Password changed successfully.</div>`;
+          }).catch((error) => showError('changePasswordMessage', error));
         });
-      });
+      }
+
+      function onDeleted() {
+        cardBody.innerHTML = `<div class="alert alert-success text-center">Your account has been deleted.</div>`;
+      }
 
       document.getElementById('deleteAccountBtn').addEventListener('click', function() {
-        if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
-          user.delete().then(() => {
-            cardBody.innerHTML = `<div class="alert alert-success text-center">Your account has been deleted.</div>`;
-          }).catch((error) => {
-            document.getElementById('deleteAccountMessage').innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
-          });
-        }
+        if (!confirm("Are you sure you want to delete your account? This action cannot be undone.")) return;
+        document.getElementById('deleteAccountMessage').innerHTML = '';
+
+        user.delete().then(onDeleted).catch((error) => {
+          // Firebase only deletes right after a sign-in. A session kept from an earlier visit has to
+          // sign in again first: Google and Apple can do it in a popup, a password account signs out and in.
+          // The popup opens from a new click: browsers block one opened after this network round trip.
+          if (error.code === 'auth/requires-recent-login' && socialProvider) {
+            const message = document.getElementById('deleteAccountMessage');
+            message.innerHTML = `
+              <div class="alert alert-warning">For your security, confirm it's you with ${socialName} to delete the account.</div>
+              <button id="confirmDeleteBtn" class="btn btn-provider ${socialProvider === 'apple.com' ? 'btn-apple' : 'btn-google'}">
+                ${socialProvider === 'apple.com' ? APPLE_LOGO : GOOGLE_LOGO}<span>Confirm with ${socialName} and delete</span>
+              </button>`;
+            document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+              user.reauthenticateWithPopup(providerFor(socialProvider))
+                .then(() => user.delete())
+                .then(onDeleted)
+                .catch((retryError) => showError('deleteAccountMessage', retryError));
+            });
+            return;
+          }
+          showError('deleteAccountMessage', error);
+        });
       });
     }
 
