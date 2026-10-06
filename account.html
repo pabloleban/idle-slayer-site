@@ -175,6 +175,10 @@
           return 'This email already has an Idle Slayer account with a different sign-in method. Sign in the same way you do in the game.';
         case 'auth/requires-recent-login':
           return 'For your security, sign out and sign in again, then retry.';
+        case 'auth/email-already-in-use':
+          return 'That email already has an Idle Slayer account.';
+        case 'auth/invalid-email':
+          return 'That email address is not valid.';
         default:
           return error.message;
       }
@@ -345,12 +349,15 @@
 
       // Email and password only exist for accounts that have a password; Google and Apple manage theirs.
       if (hasPassword) {
+        // The email changes only when the player opens the link Firebase sends to the new address
+        // (reset-password.html applies it): a typo can't break their email sign-in, and it works with
+        // Firebase's email enumeration protection, which refuses updateEmail.
         document.getElementById('updateEmailForm').addEventListener('submit', function(e) {
           e.preventDefault();
           const newEmail = document.getElementById('newEmail').value;
-          user.updateEmail(newEmail).then(() => {
-            document.getElementById('updateEmailMessage').innerHTML = `<div class="alert alert-success">Email updated successfully.</div>`;
-            renderAccountManagement(user);
+          user.verifyBeforeUpdateEmail(newEmail).then(() => {
+            document.getElementById('updateEmailMessage').innerHTML = `<div class="alert alert-success">We sent a link to <b>${escapeHtml(newEmail)}</b>. Your email changes when you open it.</div>`;
+            document.getElementById('updateEmailForm').reset();
           }).catch((error) => showError('updateEmailMessage', error));
         });
 
